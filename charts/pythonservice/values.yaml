@@ -1,0 +1,78 @@
+
+# RAW SECTION: THIS WILL BE RENDERED BY SCONE MESH
+
+replicaCount: 1
+
+image: registry.scontain.com/cicd/python_hello_user:debug_su1
+
+
+imagePullSecrets:
+  - name: sconeapps
+
+
+nameOverride: ""
+fullnameOverride: sw-updates-debug-pythonservice
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+resources:
+  limits:
+    "sgx.intel.com/enclave": 1
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+
+scone:
+  api_session: sw-updates-debug-11293-10031/pythonservice/python3
+  cas: cas.default
+
+
+# TEMPLATE SECTION: THIS WILL BE RENDERED BY SCONE GENSERVICE
+#  - we give values in service.yaml priority
+#  - otherwise we use values 
+#      - using from scone mesh: see APP_SERVICE_PORT below
+#      - using a constant:  default(value="error")
+
+  scone_log: debug
+  scone_version: 0
+
+initContainers:
+  container1:
+    enabled: false
+    host: 
+    port: 
+  container2:
+    enabled: false
+    host: 
+    port: 
+
+
+# on which port the API is listening
+
+service:
+  type: ClusterIP
+  port: 443
+
+jobs:
+  restartPolicy: Always

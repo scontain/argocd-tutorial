@@ -1,0 +1,15 @@
+
+global:
+  scone:
+    # If enabled, inject attestation information in
+    # global environment: SCONE_CAS_ADDR, SCONE_LAS_ADDR
+    attestation:
+      enabled: true
+      lasUseHostIP: true
+      #las: 172.17.0.1
+      cas: cas.default
+  useSGXDevPlugin: "enabled"
+  sgxEpcMem: 16 # in MiB
+  imagePullSecrets:
+    - name: sconeapps
+

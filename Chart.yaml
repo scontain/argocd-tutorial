@@ -1,0 +1,20 @@
+apiVersion: v2
+name: sw-updates-debug-11293-10031
+description: A Helm chart for Kubernetes
+dependencies:
+  - name: pythonservice
+    version: 0.1.0
+  - name: scone_encrypted_policies
+    version: 0.1.0
+description: An application generated with scone mesh
+home: https://scontain.com/
+icon: https://scontain.com/img/logo-vector-black-text.svg
+maintainers:
+- email: info@scontain.com
+  name: SCONE TEAM
+
+type: application
+
+version: 0.1.0
+appVersion: 0.1.0
+
