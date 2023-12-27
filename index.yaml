@@ -1,0 +1,26 @@
+apiVersion: v1
+entries:
+  sw-updates-debug-11293-10031:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-12-27T16:45:29.274656+01:00"
+    dependencies:
+    - name: pythonservice
+      repository: ""
+      version: 0.1.0
+    - name: scone_encrypted_policies
+      repository: ""
+      version: 0.1.0
+    description: An application generated with scone mesh
+    digest: d71d2d8f37434c6e6b0e368803cf39dccde6ba3192c2ef6f00068938397a677c
+    home: https://scontain.com/
+    icon: https://scontain.com/img/logo-vector-black-text.svg
+    maintainers:
+    - email: info@scontain.com
+      name: SCONE TEAM
+    name: sw-updates-debug-11293-10031
+    type: application
+    urls:
+    - packages/sw-updates-debug-11293-10031-0.2.0.tgz
+    version: 0.2.0
+generated: "2023-12-27T16:45:29.27154+01:00"
